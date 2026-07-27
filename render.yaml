@@ -1,10 +1,9 @@
 services:
   - type: web
     name: quote-generator
-    env: php
+    runtime: docker
     plan: free
-    buildCommand: ""
-    startCommand: "php -S 0.0.0.0:$PORT -t ."
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: GROQ_API_KEY
         sync: false
